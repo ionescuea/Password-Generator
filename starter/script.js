@@ -91,7 +91,7 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  var passwordLength = prompt("Please chose how long your password should be:")
+  var passwordLength = prompt("Please chose how long your password should be (between 8 and 128 characters):")
   if (passwordLength >= 8 && passwordLength <= 128) {
     var characters = [];
     var lowercase = confirm("Please confirm, by pressing OK, if you want to include Lowercase Characters in your password?")
