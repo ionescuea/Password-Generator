@@ -88,18 +88,31 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-// Function to prompt user for password options
-function getPasswordOptions() {
+alert("Welcome to Password Generator!");
+alert("Your NEW password will be at least 8 characters long, but no more than 128.")
+var passwordLength = prompt("Please chose how long your password should be:")
+alert("Please select at least ONE character type from the following:")
+var lowercase = confirm("Please confirm, by pressing OK, if you want to include Lowercase Characters in your password?")
+var uppercase = confirm("Please confirm, by pressing OK, if you want to include Uppercase Characters in your password?")
+var numeric = confirm("Please confirm, by pressing OK, if you want to include Numeric Characters in your password?")
+var Special = confirm("Please confirm, by pressing OK, if you want to include Special Characters in your password?")
 
-}
+var symbols = specialCharacters.concat(numericCharacters, lowerCasedCharacters, upperCasedCharacters)
+
+// Function to prompt user for password options
+function getPasswordOptions(passwordLength) {
+
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-
+  // Math.floor(Math.random(symbols))
 }
 
 // Function to generate password with user input
 function generatePassword() {
+  
+
+  return "Your NEW Password will appear HERE!";
 
 }
 
