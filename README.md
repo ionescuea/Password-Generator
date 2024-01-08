@@ -8,7 +8,7 @@ This web application generates passwords using uppercase, lowercase, special and
 
 # Instalation
 
-The website page can be accessed [here](https://github.com/ionescuea/Password-Generator/index.html).
+The Password Generator website page can be accessed [here](https://ionescuea.github.io/Password-Generator/).
 
 # Usage
 
@@ -22,12 +22,20 @@ A prompt will appear asking to chose a number of characters between 8 and 128, a
 
 ![Prompt](assets/prompt.jpg)
 
-Next, a series of 'confirm' options will appear, as the user will be asked to chose between lowerchase, uppercase, numeric and special characters. Also, there is the option to press 'cancel' and that character type will not be included in the password.
+If the user is selecting a number outside the 8 to 128 range, a message will appear on the sceen (instead of the password).
+
+![Wrong-number](assets/wrong-number.jpg)
+
+Next, a series of 'confirm' options will appear, as the user will be asked to chose between lowercase, uppercase, numeric and special characters. Also, there is the option to press 'cancel' and that character type will not be included in the password.
 
 ![Lowercase](assets/lowercase.jpg)
 ![Uppercase](assets/uppercase.jpg)
 ![Numeric](assets/numeric.jpg)
 ![Special](assets/special.jpg)
+
+If no character is selected, a message will appear on the screen (instead of the password).
+
+![No-character](assets/no-character.jpg)
 
 Once all the questions, promp and confirm, were responded, the password will appear on the screen.
 
