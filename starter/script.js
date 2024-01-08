@@ -88,32 +88,55 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-alert("Welcome to Password Generator!");
-alert("Your NEW password will be at least 8 characters long, but no more than 128.")
-var passwordLength = prompt("Please chose how long your password should be:")
-alert("Please select at least ONE character type from the following:")
-var lowercase = confirm("Please confirm, by pressing OK, if you want to include Lowercase Characters in your password?")
-var uppercase = confirm("Please confirm, by pressing OK, if you want to include Uppercase Characters in your password?")
-var numeric = confirm("Please confirm, by pressing OK, if you want to include Numeric Characters in your password?")
-var Special = confirm("Please confirm, by pressing OK, if you want to include Special Characters in your password?")
-
-var symbols = specialCharacters.concat(numericCharacters, lowerCasedCharacters, upperCasedCharacters)
 
 // Function to prompt user for password options
-function getPasswordOptions(passwordLength) {
-
+function getPasswordOptions() {
+  var passwordLength = prompt("Please chose how long your password should be:")
+  if (passwordLength >= 8 && passwordLength <= 128) {
+    var characters = [];
+    var lowercase = confirm("Please confirm, by pressing OK, if you want to include Lowercase Characters in your password?")
+    if (lowercase == true) {
+      characters = characters.concat(lowerCasedCharacters)
+    }
+    var uppercase = confirm("Please confirm, by pressing OK, if you want to include Uppercase Characters in your password?")
+    if (uppercase == true) {
+      characters = characters.concat(upperCasedCharacters)
+    }
+    var numeric = confirm("Please confirm, by pressing OK, if you want to include Numeric Characters in your password?")
+    if (numeric == true) {
+      characters = characters.concat(numericCharacters)
+    }
+    var special = confirm("Please confirm, by pressing OK, if you want to include Special Characters in your password?")
+    if (special == true) {
+      characters = characters.concat(specialCharacters)
+    }
+    return [passwordLength, characters];
+  } else {
+    return [0, null];
+  }
+}
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-  // Math.floor(Math.random(symbols))
+  return arr[Math.floor((Math.random()*arr.length))];
 }
 
 // Function to generate password with user input
 function generatePassword() {
-  
-
-  return "Your NEW Password will appear HERE!";
-
+  const [totalChar, symbols] = getPasswordOptions();
+  if (totalChar > 0) {
+    if (symbols.length === 0) {
+      return "No character type was selected";
+    } else {
+      var pwd = "";
+      for (let i=0; i < totalChar; i++) {
+        pwd += getRandom(symbols);
+      }
+      return pwd;
+    }
+  } else {
+    return "Wrong number of characters";
+  }
 }
 
 // Get references to the #generate element
